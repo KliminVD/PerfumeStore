@@ -9,4 +9,11 @@
     <string name="password">Password</string>
     <string name="toReg">Зарегистрироваться</string>
     <string name="toEnter">Войти</string>
+    <string name="catalogue">Каталог</string>
+    <string name="cart">Корзина</string>
+    <string name="constructor">Конструктор</string>
+    <string name="toExit">Выйти из аккаунта</string>
+    <string name="settings">Настройки</string>
+    <string name="addButton">Добавить</string>
+    <string name="deleteButton">Удалить</string>
 </resources>

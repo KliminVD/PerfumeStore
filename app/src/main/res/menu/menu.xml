@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_catalogue"
+        android:title="@string/catalogue"
+        android:icon="@drawable/baseline_apps_24" />
+
+    <item
+        android:id="@+id/navigation_cart"
+        android:title="@string/cart"
+        android:icon="@drawable/baseline_add_shopping_cart_24" />
+
+    <item
+        android:id="@+id/navigation_constructor"
+        android:title="@string/constructor"
+        android:icon="@drawable/baseline_architecture_24" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/baseline_construction_24" />
+</menu>

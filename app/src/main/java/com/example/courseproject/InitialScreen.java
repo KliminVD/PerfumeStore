@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,28 +28,48 @@ public class InitialScreen extends AppCompatActivity {
         setContentView(view);
         mAuth = FirebaseAuth.getInstance();
     }
-    @Override
+
     protected void onStart() {
         super.onStart();
         FirebaseUser cUser = mAuth.getCurrentUser();
-        if (cUser != null)
-            Toast.makeText(this, "User is identificated", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(this, "User is not identificated", Toast.LENGTH_SHORT).show();
+        if (cUser != null) {
+            Intent intent = new Intent(this, CatalogActivity.class);
+            startActivity(intent);
+        }
     }
     public void onClickSignUp(View view) {
         if (!TextUtils.isEmpty(binding.edEmail.getText().toString()) &&
                 !TextUtils.isEmpty(binding.edPass.getText().toString()))
             mAuth.createUserWithEmailAndPassword(binding.edEmail.getText().toString(), binding.edPass.getText().toString())
                     .addOnCompleteListener(task -> {
-                        if (task.isSuccessful())
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(this, CatalogActivity.class);
+                            startActivity(intent);
                             Toast.makeText(getApplicationContext(), "User sign up successful", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(getApplicationContext(), "User sign up failed", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "User sign up unsuccessful", Toast.LENGTH_LONG).show();
+                        }
                     });
+        else
+            Toast.makeText(getApplicationContext(), "Enter full information", Toast.LENGTH_SHORT).show();
+
     }
     public void onClickSignIn(View view){
-
+        if (!TextUtils.isEmpty(binding.edEmail.getText().toString()) &&
+                !TextUtils.isEmpty(binding.edPass.getText().toString()))
+            mAuth.signInWithEmailAndPassword(binding.edEmail.getText().toString(), binding.edPass.getText().toString())
+                    .addOnCompleteListener(task -> {
+                       if (task.isSuccessful()) {
+                           Intent intent = new Intent(this, CatalogActivity.class);
+                           startActivity(intent);
+                           Toast.makeText(getApplicationContext(), "User sign in successful", Toast.LENGTH_LONG).show();
+                       }
+                       else
+                           Toast.makeText(getApplicationContext(), "User sign in unsuccessful", Toast.LENGTH_LONG).show();
+                    });
+        else
+            Toast.makeText(getApplicationContext(), "Enter full information", Toast.LENGTH_SHORT).show();
     }
 
 }
