@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InitialScreen">
+    tools:context=".Activities.InitialScreen"
+    android:background="@color/green">
 
 
     <ImageView
@@ -52,7 +53,8 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/edPass"
         app:layout_constraintStart_toStartOf="@+id/edPass"
-        app:layout_constraintTop_toBottomOf="@+id/edPass" />
+        app:layout_constraintTop_toBottomOf="@+id/edPass"
+        />
 
     <Button
         android:id="@+id/btnEnter"
@@ -64,6 +66,7 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/btnReg"
         app:layout_constraintStart_toStartOf="@+id/btnReg"
-        app:layout_constraintTop_toBottomOf="@+id/btnReg" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReg"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

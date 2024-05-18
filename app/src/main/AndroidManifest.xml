@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +15,18 @@
         android:theme="@style/Theme.CourseProject"
         tools:targetApi="29">
         <activity
-            android:name=".CatalogActivity"
+            android:name=".Activities.EditActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.EditActivity"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.CatalogActivity"
             android:exported="false" />
         <activity
-            android:name=".InitialScreen"
+            android:name=".Activities.InitialScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +35,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

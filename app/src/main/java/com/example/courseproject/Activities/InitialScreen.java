@@ -1,25 +1,23 @@
-package com.example.courseproject;
+package com.example.courseproject.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.courseproject.Entities.User;
 import com.example.courseproject.databinding.ActivityMainBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class InitialScreen extends AppCompatActivity {
     ActivityMainBinding binding;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +25,7 @@ public class InitialScreen extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
     }
 
     protected void onStart() {
@@ -43,6 +42,7 @@ public class InitialScreen extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(binding.edEmail.getText().toString(), binding.edPass.getText().toString())
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
+                            db.collection("users").document(mAuth.getCurrentUser().getUid()).set(new User("", ""));
                             Intent intent = new Intent(this, CatalogActivity.class);
                             startActivity(intent);
                             Toast.makeText(getApplicationContext(), "User sign up successful", Toast.LENGTH_LONG).show();

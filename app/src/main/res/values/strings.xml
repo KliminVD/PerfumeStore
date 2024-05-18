@@ -3,7 +3,6 @@
     <string name="or">или</string>
     <string name="authorization">Авторизация</string>
     <string name="registration">Регистрация</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -14,6 +13,25 @@
     <string name="constructor">Конструктор</string>
     <string name="toExit">Выйти из аккаунта</string>
     <string name="settings">Настройки</string>
-    <string name="addButton">Добавить</string>
-    <string name="deleteButton">Удалить</string>
+    <string name="addButton">"+"</string>
+    <string name="deleteButton">-</string>
+    <string name="emptyCart">Корзина пуста</string>
+    <string name="cost">Общая стоимость: 0 рублей</string>
+    <string name="addToCart">Добавить в корзину</string>
+    <string name="ready">Готово</string>
+    <string name="nameHint">Имя</string>
+    <string name="surnameHint">Фамилия</string>
+    <string-array name="spinner_items">
+        <item>Выберите ингредиент</item>
+        <item>Сандал</item>
+        <item>Бергамот</item>
+        <item>Черный перец</item>
+        <item>Пачули</item>
+        <item>Жасмин</item>
+        <item>Табак</item>
+        <item>Мята</item>
+        <item>Мускус</item>
+        <item>Кашмир</item>
+        <item>Корица</item>
+    </string-array>
 </resources>
