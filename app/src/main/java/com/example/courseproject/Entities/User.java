@@ -7,11 +7,21 @@ import java.util.HashMap;
 public class User {
     private String name;
     private String surname;
+    private String role;
     public User() {}
 
-    public User(String name, String surname) {
+    public User(String name, String surname, String role) {
         this.name = name;
         this.surname = surname;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {

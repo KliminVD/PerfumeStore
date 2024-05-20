@@ -9,13 +9,13 @@ import com.example.courseproject.R;
 import com.example.courseproject.Entities.User;
 import com.example.courseproject.databinding.ActivityCatalogBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 
-public class CatalogActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
     ActivityCatalogBinding binding;
     private FirebaseAuth mAuth;
     private NavController navController;
@@ -38,6 +38,8 @@ public class CatalogActivity extends AppCompatActivity {
                 navController.navigate(R.id.thirdFragment);
             else if (item.getItemId() == R.id.navigation_settings)
                 navController.navigate(R.id.forthFragment);
+            else if (item.getItemId() == R.id.navigation_author)
+                navController.navigate(R.id.fifthFragment);
             return true;
         });
     }

@@ -26,14 +26,16 @@ public class CatalogFragment extends Fragment {
         View view = binding.getRoot();
         mAdapter = new ProductAdapter(getContext(), new ArrayList<>());
         binding.productListView.setAdapter(mAdapter);
+        return view;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
         ProductViewModel productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
         productViewModel.getProductsLiveData().observe(getViewLifecycleOwner(), productList -> {
             mAdapter.setProducts(productList);
             mAdapter.notifyDataSetChanged();
         });
-        return view;
     }
-
-
 }

@@ -15,15 +15,22 @@
         android:theme="@style/Theme.CourseProject"
         tools:targetApi="29">
         <activity
+            android:name=".Activities.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.PageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.EditActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.EditActivity"/>
+                <action android:name="android.intent.action.EditActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.CatalogActivity"
+            android:name=".Activities.UserActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.InitialScreen"
@@ -35,5 +42,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 </manifest>

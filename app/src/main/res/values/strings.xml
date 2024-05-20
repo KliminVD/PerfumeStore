@@ -21,6 +21,11 @@
     <string name="ready">Готово</string>
     <string name="nameHint">Имя</string>
     <string name="surnameHint">Фамилия</string>
+    <string name="adding">Добавление</string>
+    <string name="author">Автор</string>
+    <string name="program">О программе</string>
+    <string name="aboutMe">Автор приложения - студент ИКБО-03-22 Климин Иван</string>
+    <string name="aboutProgram">В этом приложении вы можете заказать себе парфюмерную продукцию, а также создать собственный аромат на основе 3 ингредиаентов</string>
     <string-array name="spinner_items">
         <item>Выберите ингредиент</item>
         <item>Сандал</item>
@@ -33,5 +38,9 @@
         <item>Мускус</item>
         <item>Кашмир</item>
         <item>Корица</item>
+    </string-array>
+    <string-array name="roles">
+        <item>Пользователь</item>
+        <item>Администратор</item>
     </string-array>
 </resources>

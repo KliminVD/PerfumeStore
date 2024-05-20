@@ -33,8 +33,6 @@ public class EditActivity extends AppCompatActivity {
                 if (!(name.isEmpty() || surname.isEmpty())) {
                     intent.putExtra("name", name);
                     intent.putExtra("surname", surname);
-                    user = new User(name, surname);
-                    db.collection("users").document(mAuth.getCurrentUser().getUid()).set(user);
                     setResult(RESULT_OK, intent);
                     finish();
                 }

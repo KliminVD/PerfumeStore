@@ -32,6 +32,12 @@
         android:label="Forth Fragment"
         tools:layout="@layout/fragment_settings">
     </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.example.courseproject.Fragments.AuthorFragment"
+        android:label="Fifth Fragment"
+        tools:layout="@layout/fragment_author">
+    </fragment>
     <action
         android:id="@+id/action_global_navigation_home"
         app:destination="@id/firstFragment" />

@@ -41,23 +41,16 @@ public class ProductRepository {
                         List<Product> productList = new ArrayList<>();
                         for (DocumentSnapshot document : task.getResult()) {
                             Product product = document.toObject(Product.class);
-
-                            // Проверяем, есть ли текущий продукт в корзине пользователя
                             if (userCartRef != null) {
                                 userCartRef.document(product.getId()).get().addOnCompleteListener(cartTask -> {
                                     if (cartTask.isSuccessful()) {
                                         DocumentSnapshot cartDocument = cartTask.getResult();
                                         if (cartDocument.exists()) {
-                                            // Если продукт есть в корзине, добавляем его данные
                                             productList.add(cartDocument.toObject(Product.class));
                                         } else {
-                                            // Если продукта нет в корзине, добавляем данные из основной коллекции
                                             productList.add(product);
                                         }
-                                        // Обновляем LiveData с новым списком продуктов
                                         productsLiveData.setValue(productList);
-                                    } else {
-                                        // Обработка ошибки
                                     }
                                 });
                             }

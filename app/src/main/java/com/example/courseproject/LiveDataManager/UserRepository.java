@@ -45,6 +45,7 @@ public class UserRepository {
                 User user = new User();
                 user.setName(documentSnapshot.getString("name"));
                 user.setSurname(documentSnapshot.getString("surname"));
+                user.setRole(documentSnapshot.getString("role"));
                 userLiveData.setValue(user);
             }
         });

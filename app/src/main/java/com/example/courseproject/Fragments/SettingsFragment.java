@@ -12,17 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.transition.FragmentTransitionSupport;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.courseproject.Activities.EditActivity;
 import com.example.courseproject.Activities.InitialScreen;
 import com.example.courseproject.Entities.User;
-import com.example.courseproject.LiveDataManager.ProductViewModel;
 import com.example.courseproject.LiveDataManager.UserViewModel;
 import com.example.courseproject.databinding.FragmentSettingsBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,6 +41,7 @@ public class SettingsFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserLiveData().observe(getViewLifecycleOwner(), user -> {
+            this.user = user;
             if (user.getName().isEmpty())
                 binding.nameValue.setText("Введите имя");
             else binding.nameValue.setText(user.getName());
@@ -85,6 +83,9 @@ public class SettingsFragment extends Fragment {
                                     binding.nameValue.setText(name);
                                     String surname = intent.getStringExtra("surname");
                                     binding.surnameValue.setText(surname);
+                                    user.setName(name);
+                                    user.setSurname(surname);
+                                    db.collection("users").document(mAuth.getCurrentUser().getUid()).set(user);
                                 }
                             }
                             else Toast.makeText(getContext(), "Cannot load user info", Toast.LENGTH_LONG).show();

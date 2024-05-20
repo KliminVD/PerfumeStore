@@ -1,6 +1,10 @@
 package com.example.courseproject.Adapter;
 
+import static androidx.activity.result.ActivityResultCallerKt.registerForActivityResult;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,9 +14,16 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.courseproject.Activities.PageActivity;
 import com.example.courseproject.Fragments.CartFragment;
 import com.example.courseproject.Managers.CartManager;
 import com.example.courseproject.Entities.Product;
@@ -33,7 +44,6 @@ public class ProductAdapter extends BaseAdapter {
     private FirebaseAuth mAuth;
     private CartManager manager;
     private StorageReference storageRef;
-    private FirebaseFirestore db;
     private CartFragment frag;
     public ProductAdapter(Context context, ArrayList<Product> products) {
         mContext = context;
@@ -41,7 +51,6 @@ public class ProductAdapter extends BaseAdapter {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser cUser = mAuth.getCurrentUser();
         manager = new CartManager(cUser.getUid());
-        db = FirebaseFirestore.getInstance();
     }
     public void setFrag(CartFragment frag) {this.frag = frag;}
     @Override
@@ -62,11 +71,11 @@ public class ProductAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_product, parent, false);
         }
-
         Product p = getProduct(position);
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference().child("images");
         StorageReference imageRef = storageRef.child(p.getImage());
+        Log.d("ffff", p.getImage());
         TextView quantity = convertView.findViewById(R.id.quantity);
         quantity.setText(p.getQuantity() + "");
         ((TextView) convertView.findViewById(R.id.tvName)).setText(p.getName());
@@ -112,6 +121,15 @@ public class ProductAdapter extends BaseAdapter {
                         frag.update(sum);
                     }
                 }
+            }
+        });
+        View temp = convertView;
+        convertView.findViewById(R.id.linearLayout1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PageActivity.class);
+                intent.putExtra("product", p);
+                mContext.startActivity(intent);
             }
         });
         return convertView;

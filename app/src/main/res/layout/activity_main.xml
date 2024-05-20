@@ -47,26 +47,36 @@
         android:id="@+id/btnReg"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="96dp"
         android:onClick="onClickSignUp"
         android:text="@string/toReg"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/edPass"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edPass"
-        app:layout_constraintTop_toBottomOf="@+id/edPass"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/edPass" />
 
     <Button
         android:id="@+id/btnEnter"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:onClick="onClickSignIn"
         android:text="@string/toEnter"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/btnReg"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnReg"
-        app:layout_constraintTop_toBottomOf="@+id/btnReg"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnReg" />
+
+    <Spinner
+        android:id="@+id/spinRole"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/roles"
+        app:layout_constraintEnd_toEndOf="@+id/edPass"
+        app:layout_constraintStart_toStartOf="@+id/edPass"
+        app:layout_constraintTop_toBottomOf="@+id/edPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

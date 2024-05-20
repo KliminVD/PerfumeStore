@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_add"
+        android:title="@string/adding"
+        android:icon="@drawable/baseline_apps_24" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:title="@string/author"
+        android:icon="@drawable/baseline_construction_24" />
+    <item
+        android:id="@+id/navigation_author"
+        android:title="@string/author"
+        android:icon="@drawable/baseline_account_circle_24" />
+</menu>
