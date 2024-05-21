@@ -1,5 +1,6 @@
 package com.example.courseproject.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.courseproject.Activities.OrderActivity;
 import com.example.courseproject.Adapter.ProductAdapter;
 import com.example.courseproject.Entities.Product;
 import com.example.courseproject.LiveDataManager.ProductCartViewModel;
@@ -34,8 +36,10 @@ public class CartFragment extends Fragment {
 
         ProductCartViewModel productCartViewModel = new ViewModelProvider(this).get(ProductCartViewModel.class);
         productCartViewModel.getProductsLiveData().observe(getViewLifecycleOwner(), productList -> {
-            if (productList.isEmpty())
+            if (productList.isEmpty()) {
                 binding.tvEmpty.setVisibility(View.VISIBLE);
+                binding.costContainer.setVisibility(View.INVISIBLE);
+            }
             else{
                 int sum = 0;
                 for (Product p : productList){
@@ -46,6 +50,14 @@ public class CartFragment extends Fragment {
             mAdapter.setProducts(productList);
             mAdapter.setFrag(this);
             mAdapter.notifyDataSetChanged();
+        });
+        binding.toOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), OrderActivity.class);
+                intent.putExtra("cost", binding.totalCostTextView.getText().toString());
+                startActivity(intent);
+            }
         });
         return view;
     }

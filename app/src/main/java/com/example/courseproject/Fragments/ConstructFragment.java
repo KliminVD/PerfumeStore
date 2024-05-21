@@ -215,6 +215,7 @@ public class ConstructFragment extends Fragment {
                                     + binding.spinner2.getSelectedItem().toString() + "/"
                                     + binding.spinner3.getSelectedItem().toString(),
                             8000, "Icon.png", 1));
+                    Toast.makeText(getContext(), "Craft perfume is added to cart", Toast.LENGTH_LONG).show();
                 }
                 else
                     Toast.makeText(getContext(), "Not enough elements", Toast.LENGTH_LONG).show();

@@ -26,6 +26,9 @@
     <string name="program">О программе</string>
     <string name="aboutMe">Автор приложения - студент ИКБО-03-22 Климин Иван</string>
     <string name="aboutProgram">В этом приложении вы можете заказать себе парфюмерную продукцию, а также создать собственный аромат на основе 3 ингредиаентов</string>
+    <string name="telephone">Телефон</string>
+    <string name="adress">Адресс</string>
+    <string name="toOrder">Оформить</string>
     <string-array name="spinner_items">
         <item>Выберите ингредиент</item>
         <item>Сандал</item>

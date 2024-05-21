@@ -35,7 +35,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:background="#00370C">
+        android:background="#00370C"
+        android:id="@+id/costContainer">
         <TextView
             android:id="@+id/totalCostTextView"
             android:layout_width="0dp"
@@ -45,5 +46,10 @@
             android:textSize="18sp"
             android:textColor="@color/white"
             android:textStyle="bold"/>
+        <Button
+            android:id="@+id/toOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toOrder"/>
     </LinearLayout>
 </LinearLayout>
