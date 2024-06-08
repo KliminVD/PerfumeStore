@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.AuthorFragment"
     android:background="@color/green">
-
     <TextView
         android:id="@+id/aboutMe"
         android:layout_width="wrap_content"
@@ -20,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.338" />
-
     <TextView
         android:id="@+id/aboutProgram"
         android:layout_width="wrap_content"
@@ -33,5 +31,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

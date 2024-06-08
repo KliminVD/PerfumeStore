@@ -29,12 +29,10 @@ public class ProductCartRepository {
             userCartRef = db.collection("users").document(currentUser.getUid()).collection("cart");
         }
     }
-
     public LiveData<List<Product>> getProductsLiveData() {
         loadProducts();
         return productsLiveData;
     }
-
     private void loadProducts() {
         userCartRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {

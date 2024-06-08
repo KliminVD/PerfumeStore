@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activities.InitialScreen"
     android:background="@color/green">
-
-
     <ImageView
         android:id="@+id/imgUser"
         android:layout_width="match_parent"
@@ -16,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_account_circle_24" />
-
     <EditText
         android:id="@+id/edEmail"
         android:layout_width="0dp"
@@ -28,7 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgUser"
         app:layout_constraintWidth_percent=".8" />
-
     <EditText
         android:id="@+id/edPass"
         android:layout_width="0dp"
@@ -42,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edEmail"
         app:layout_constraintWidth_percent=".8" />
-
     <Button
         android:id="@+id/btnReg"
         android:layout_width="0dp"
@@ -55,7 +50,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edPass"
         app:layout_constraintTop_toBottomOf="@+id/edPass" />
-
     <Button
         android:id="@+id/btnEnter"
         android:layout_width="0dp"
@@ -68,7 +62,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnReg"
         app:layout_constraintTop_toBottomOf="@+id/btnReg" />
-
     <Spinner
         android:id="@+id/spinRole"
         android:layout_width="0dp"
@@ -78,5 +71,4 @@
         app:layout_constraintEnd_toEndOf="@+id/edPass"
         app:layout_constraintStart_toStartOf="@+id/edPass"
         app:layout_constraintTop_toBottomOf="@+id/edPass" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

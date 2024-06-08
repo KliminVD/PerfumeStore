@@ -11,12 +11,10 @@ import java.util.List;
 public class UserViewModel extends ViewModel {
     private UserRepository repository;
     private LiveData<User> userLiveData;
-
     public UserViewModel() {
         repository = new UserRepository();
         userLiveData = repository.getUserLiveData();
     }
-
     public LiveData<User> getUserLiveData() {
         return userLiveData;
     }

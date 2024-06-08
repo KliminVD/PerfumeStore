@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/green"
     tools:context=".Activities.EditActivity">
-
     <EditText
         android:id="@+id/etSurname"
         android:layout_width="300dp"
@@ -18,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.888" />
-
     <EditText
         android:id="@+id/etName"
         android:layout_width="0dp"
@@ -29,7 +27,6 @@
         app:layout_constraintEnd_toEndOf="@+id/etSurname"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/etSurname" />
-
     <Button
         android:id="@+id/btnOk"
         android:layout_width="0dp"

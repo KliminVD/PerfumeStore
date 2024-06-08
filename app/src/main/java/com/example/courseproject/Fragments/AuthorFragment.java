@@ -1,5 +1,4 @@
 package com.example.courseproject.Fragments;
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.courseproject.R;
-
-
 public class AuthorFragment extends Fragment {
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

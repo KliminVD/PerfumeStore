@@ -11,12 +11,10 @@ import java.util.List;
 public class ProductViewModel extends ViewModel {
     private ProductRepository repository;
     private LiveData<List<Product>> productsLiveData;
-
     public ProductViewModel() {
         repository = new ProductRepository();
         productsLiveData = repository.getProductsLiveData();
     }
-
     public LiveData<List<Product>> getProductsLiveData() {
         return productsLiveData;
     }

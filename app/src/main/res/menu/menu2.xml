@@ -6,7 +6,7 @@
         android:icon="@drawable/baseline_apps_24" />
     <item
         android:id="@+id/navigation_settings"
-        android:title="@string/author"
+        android:title="@string/settings"
         android:icon="@drawable/baseline_construction_24" />
     <item
         android:id="@+id/navigation_author"
